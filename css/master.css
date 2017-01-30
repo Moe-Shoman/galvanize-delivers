@@ -1,0 +1,9 @@
+.parallax img {
+  display: block;
+  width: 100%;
+  height: 400px;
+}
+
+.card-body  {
+  height: 150px;
+}
