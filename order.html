@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="nav">
+    <nav class="nav blue darken-1">
         <div class="">
             <a href="#" class="brand-logo" id="logo-container">Galvanize Deliver's</a>
         </div>
@@ -20,17 +20,22 @@
     <div class="container">
 
         <div class="row">
-
+            <div class="col s12 m4 l8">
+                <h3 class="left">Menu</h3>
+                <h3 class="right">Order</h3>
+            </div>
+        </div>
+        <div class="row">
             <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image">
                         <img src="img/burger.jpg" alt="Burger">
                         <!-- <span class="card-title">Roayle with Cheese</span> -->
-                        <a class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">add</i></a>
+                        <a class="btn-floating halfway-fab waves-effect waves-red red right" name="Royale with Cheese"><i class="material-icons">add</i></a>
                     </div>
                     <div class="card-content card-body">
-                      <span class="card-title">Royale with Cheese</span>
-                        <p>$8.99</p>
+                        <span class="card-title">Royale with Cheese</span>
+                        <p class="prices">$8.99</p>
                     </div>
                 </div>
             </div>
@@ -40,32 +45,60 @@
                     <div class="card-image">
                         <img src="img/pizza.jpg" alt="pizza">
                         <!-- <span class="card-title">Arugula Pie</span> -->
-                        <a class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">add</i></a>
+                        <a class="btn-floating halfway-fab waves-effect waves-red red right" name="Arugula Pie"><i class="material-icons">add</i></a>
                     </div>
                     <div class="card-content card-body">
-                      <span class="card-title">Arugula Pie</span>
-                      <br>
-                      <br>
-                      <br>
-                        <p>$11.99</p>
+                        <span class="card-title">Arugula Pie</span>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="prices">$11.99</p>
                     </div>
                 </div>
             </div>
+            <div class="col s12 m6 l6">
+                <table class="striped" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td class="center">Subtotal</td>
+                            <td class="center" id="subTotal"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="center">Tax</td>
+                            <td class="center" id="tax"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="center">Total</td>
+                            <td class="center" id="total"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
 
         <div class="row">
-
 
             <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image">
                         <img src="img/ribs.jpg" alt="ribs">
                         <!-- <span class="card-title">Smoked Swine</span> -->
-                        <a class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">add</i></a>
+                        <a class="btn-floating halfway-fab waves-effect waves-red red right" name="Smoked Swine"><i class="material-icons">add</i></a>
                     </div>
                     <div class="card-content card-body">
-                      <span class="card-title">Smoked Swine</span>
-                        <p>$14.99</p>
+                        <span class="card-title">Smoked Swine</span>
+                        <p class="prices">$14.99</p>
                     </div>
                 </div>
             </div>
@@ -75,22 +108,72 @@
                     <div class="card-image">
                         <img src="img/ice_cream.jpg" alt="Ice Cream">
                         <!-- <span class="card-title">Ice Cream Biscuit</span> -->
-                        <a class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">add</i></a>
+                        <a class="btn-floating halfway-fab waves-effect waves-red red right" name="Ice Cream Biscuit"><i class="material-icons">add</i></a>
                     </div>
                     <div class="card-content card-body">
-                      <span class="card-title">Ice Cream Biscuit</span>
-                        <p>$8.99</p>
+                        <span class="card-title">Ice Cream Biscuit</span>
+                        <p class="prices">$8.99</p>
                     </div>
                 </div>
             </div>
+            <form class="col s12 m6 l3" onsubmit="validation()">
+                <div class="row">
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Name</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="icon_telephone" type="tel" class="validate">
+                        <label for="icon_telephone">Telephone</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">home</i>
+                        <input type="text" id="icon_home" class="validate">
+                        <label for="icon_home">Address</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light red" type="submit" id="order">Submit
+                       <i class="material-icons right">send</i>
+                   </button>
+            </form>
         </div>
 
+
     </div>
+    <footer class="page-footer blue darken-1 white-text">
+        <div class="row">
+            <div class="col l3 push-l1">
+                <h5 class="right">Galvanize Deliver's</h5>
+
+            </div>
+            <div class="col l2 pull-l1">
+                <br>
+                <br>
+                <p><small class="left">Fine Dining, Delivered.</small></p>
+            </div>
+
+            <div class="col l4 right">
+                <ul>
+                    <li><a href="index.html" class="left white-text">Home</a></li>
+                    <br>
+                    <li><a href="order.html" class="left white-text">Order Delivery</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright #0d47a1 blue darken-4">
+            <div class="container">
+                © 2017 Galvanize Delivers
+            </div>
+        </div>
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <script src="js/materialize.js" charset="utf-8"></script>
     <script src="js/materialize.min.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
 </body>
 
 </html>
